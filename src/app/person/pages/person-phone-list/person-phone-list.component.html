@@ -1,0 +1,40 @@
+
+    <h1 class="display-3">Phones</h1>
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <td>
+          PhoneNumber
+        </td>
+        <td>
+          Type
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let phone of phones">
+        <td>{{phone.phoneNumber}}</td>
+        <td>{{phone.phoneNumberTypeID}}</td>
+        <td>
+          <button class="btn btn-success" [routerLink]="['/phone/update', businessEntityID,
+            phone.phoneNumber,
+            phone.phoneNumberTypeID]">
+          Update
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deletePhone(phone.phoneNumber)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="display: flex; justify-content: space-between;">
+    <button [routerLink]="['/phone/create', businessEntityID]" class="btn btn-warning" style="margin-right: 0.3rem;">New phone</button>
+    <button [routerLink]="['/']" class="btn btn-secondary">Return</button>
+  </div>
+
+
